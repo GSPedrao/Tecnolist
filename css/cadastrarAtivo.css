@@ -1,0 +1,135 @@
+body{
+    background: url(../imgs/0.png),
+    url(../imgs/1.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 1% 3%, 98% 3%;
+    background-size: auto, 8%;
+}
+
+.ativo{
+    background-color: #fff;
+    margin-top: 10%;
+    border-radius: 51% 49% 0% 0% / 49% 48% 0% 0%;
+    width: auto;
+    height: 520px;
+}
+
+h1{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #173963;
+    padding-top: 50px;
+    margin-left: 35%;
+}
+
+#topo{
+    margin-top: 5%;
+    margin-left: 50%;
+}
+
+#patrimonio{
+    margin-top: 2%;
+    margin-left: 50%;
+}
+
+#descreva{
+    margin-left: 50%;
+    margin-top: 5%;
+}
+
+#localidade{
+    margin-left: 50%;
+    margin-top: 5%;
+}
+
+#tip{
+    margin-left: 15%;
+}
+#patri{
+    margin-left: 20%;
+}
+
+#tipinho{
+    margin-left: 20%;
+}
+
+#localizacao, #acai{
+    margin-left: 25%;
+}
+
+button{
+    margin-top: 3%;
+    margin-left: 43%;
+    width: 150px;  
+}
+
+#nome{
+    margin-left: 50%;
+    margin-top: 5%;
+}
+
+#name{
+    margin-left: 20%;
+}
+
+textarea{
+    resize: none;
+}
+
+/*responsivo 1200*/
+@media screen and (max-width: 1200px){
+    body{
+        background: url(../imgs/0.png),
+        url(../imgs/2.png);
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto, 30%;
+        background-position: 55% 2%, 50% 15%;
+
+    }
+
+    .ativo{
+        width: auto;
+        height: auto;
+        margin-top: 30%;
+    }
+
+    
+    h1{
+        font-size: 25px;
+        margin-left: 30%;
+    }
+    
+    #tip, #patri{
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 0%;
+    }
+    
+    #local, #acai{
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 0%;
+    }
+
+    #tipinho, #localizacao{
+        margin-top: 5%;
+        margin-left: 45%;
+    }
+
+    #tipinho{
+        margin-top: 10%;
+    }
+    
+    #patrimonio, #descreva{
+        margin-left: 40%;
+        margin-top: 5%;
+
+    }
+
+
+    button{
+        margin-bottom: 5%;
+        margin-top: 5%;
+        margin-left: 40%;
+    }
+}
