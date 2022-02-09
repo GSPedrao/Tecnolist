@@ -1,8 +1,8 @@
 header{
     background-color: #97BFEA;
     height: 100px;
-    background-image: url(./img/0.png),
-    url(./img/1.png);
+    background-image: url(../imgs/0.png),
+    url(../imgs/1.png);
     background-repeat: no-repeat, no-repeat;
     background-position: 1% 3%, 98% 3%;
     background-size: 35%, 8%;
@@ -13,7 +13,6 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     color: #173963;
     margin-left: 38%;
-    margin-top: 2%;
 }
 
 .container{
@@ -24,35 +23,44 @@ label{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: black;
+    margin-left: 5px;
 }
 
-#colaboras, #iden{
+#colar{
     margin-left: 10%;
 }
 
-#tips, #desc{
-    margin-left: 30%;
+#crias{
+    margin-left: 140px;
 }
 
-#identificacao, #descricao{
-    margin-top: 5%;
-}
-
-#colaborador, #identificacao{
+#nome{
     margin-left: 10%;
 }
 
-#tipo, #descricao{
+#desc{
     margin-left: 30%;
+}
+
+#colaborador{
+    margin-left: 10%;
+}
+
+#ativa{
+    margin-left: 10%;
+}
+
+#cativa{
+    margin-left: 10%;
 }
 
 textarea{
     resize: none;
 }
 
-.botao{
+#butaozin{
     margin-top: 3%;
-    margin-left: 40%;
+    margin-left: 100%;
     width: 150px;  
 }
 
@@ -62,7 +70,7 @@ textarea{
     header{
         background-color: #97BFEA;
         height: 100px;
-        background-image: url(./img/0.png);
+        background-image: url(../imgs/0.png);
         background-repeat: no-repeat, no-repeat;
         background-position: 50% 40%;
         background-size: auto;
@@ -80,26 +88,12 @@ textarea{
         padding: 1%;
     }
 
-    #colaboras, #info, #iden, #tips, #desc{
-        margin-left: 5%;
-        width: 90%;
+    #colar, #crias, #ativa{
+        margin-left: 5px;
     }
 
-    #colaborador, #identificacao, #tipo, #descricao{
-        margin-left: 5%;
-        margin-top: 5%;
+    #desc, #cativa, #nome{
+        margin-left: 5px;
     }
-
-    #identificacao{
-        margin-top: 5%;
-    }
-
-    .botao{
-        margin-top: 3%;
-        margin-left: 35%;
-        width: 150px;  
-    }
-    
-
     
 }

@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar usuarios</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/form_editar_usuarios.css">
+</head>
+
+
+<body>
+    <header style="background-color: #97BFEA"></header>
+
+    <div class="container border border-2">
+
+
 <?php
 // Inicia a sessão
 session_start();
@@ -32,7 +54,7 @@ if(!empty($dados['usuario'])){
         //var_dump($row_usuarios);
         extract($row_usuario);
         echo "<input type='hidden' name='id_usuario[]' value='$id_usuario'> <br><br>";
-        echo "Nome: <input type='text' name='nome[]' value='$nome' placeholder='Nome do usuario'> <br><br>";
+        echo "Nome: <input type='text' class='form-control' name='nome[]' value='$nome' placeholder='Nome do usuario'> <br><br>";
         if($ativo == 1) {
             echo "Status: <select name='ativo[]' value='$ativo'>";
             echo "<option value='1' selected>Ativo</option>";
@@ -44,8 +66,11 @@ if(!empty($dados['usuario'])){
         }
         echo "<hr>";
     }
+    ?>
+    </div>
+    <?php
 
-    echo "<input type='submit'  value='Salvar' name='editUsuarios'>";
+    echo "<input type='submit' id='tentando' style='border-radius: 30px; background-color: #124A86' class='btn btn-primary' value='Salvar' name='editUsuarios'>";
 
     // Fim do form
     echo "</form>";
@@ -56,5 +81,8 @@ if(!empty($dados['usuario'])){
    header("location: Gusuarios.php");
 }
 
-
 ?>
+
+    
+</body>
+</html>
