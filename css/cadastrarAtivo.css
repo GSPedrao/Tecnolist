@@ -22,6 +22,15 @@ h1{
     margin-left: 35%;
 }
 
+#sair{
+    margin-top: 480px;
+    margin-left: 1250px;
+    position: fixed;
+    width: 90px;
+    border: none;
+    padding: 0px 0px 0px 0px
+}
+
 #topo{
     margin-top: 5%;
     margin-left: 50%;
@@ -98,35 +107,57 @@ textarea{
         font-size: 25px;
         margin-left: 30%;
     }
-    
-    #tip, #patri{
+
+    #topo{
+        margin-top: 5%;
         margin-left: 10%;
-        width: 80%;
-        margin-top: 0%;
-    }
-    
-    #local, #acai{
-        margin-left: 10%;
-        width: 80%;
-        margin-top: 0%;
     }
 
-    #tipinho, #localizacao{
+    #patrimonio{
         margin-top: 5%;
-        margin-left: 45%;
+        margin-left: 10%;
+    }
+
+    #descreva{
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+
+    #localidade{
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+
+    
+    #patri{
+        margin-left: 10%;
+        width: 80%;
     }
 
     #tipinho{
-        margin-top: 10%;
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    #localizacao, #acai{
+    margin-left: 10%;
+    width: 80%;
     }
     
-    #patrimonio, #descreva{
-        margin-left: 40%;
-        margin-top: 5%;
-
+    #nome{
+        margin-left: 10%;
+        margin-top: 10%;
     }
 
+    #name{
+        margin-left: 10%;
+        width: 80%;
+    }
 
+    textarea{
+        resize: none;
+    }
+    
     button{
         margin-bottom: 5%;
         margin-top: 5%;

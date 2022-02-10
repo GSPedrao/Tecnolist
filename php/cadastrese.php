@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../css/cadastraUser.css">
 </head>
 <body style="background-color: #97BFEA">
+<button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button>
     <div class="cadastreSe">
         <h1>Cadastre um usuário</h1>
             <form method="POST" class="row g-0">
@@ -55,7 +56,7 @@
             </select>
             <br>
             <div class="botao">
-          <input style="border-radius: 30px; background-color: #124A86;  width: 150px; " class="btn btn-primary" type="submit" value="Salvar">
+            <input style="border-radius: 30px; background-color: #124A86;  width: 150px; " class="btn btn-primary" type="submit" value="Salvar">
             </div>
         
         </form>

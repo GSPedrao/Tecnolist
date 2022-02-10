@@ -75,12 +75,12 @@ $result = $conn->query($sql);
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col" id="ordem">Ordem</th>
-                    <th scope="col" id="colaborador">Colaborador</th>
-                    <th scope="col" id="chamado">Chamado</th>
-                    <th scope="col" id="ativo">Ativo</th>
-                    <th scope="col" id="data">Data</th>
-                    <th scope="col" id="status">Status</th>
+                    <th id="ordem">Ordem</th>
+                    <th id="colaborador">Colaborador</th>
+                    <th id="chamado">Chamado</th>
+                    <th id="ativo">Ativo</th>
+                    <th id="data">Data</th>
+                    <th id="status">Status</th>
                   </tr>
                     <tbody>
             <?php

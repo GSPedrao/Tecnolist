@@ -41,7 +41,7 @@ $rti = $row_ti['descricao'];
 </head>
 
 <body>
-    <header></header>
+    <header><button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
     <h1>Formulario de pedidos</h1>
     <div class="container border border-2">
         <form method="POST" class="row g-0">
@@ -92,16 +92,13 @@ if (isset($_POST['nome'])) {
 
     if (!empty($descricao) && !empty($id_ativo) && !empty($id_usuario)) {
 
-        if ($c->msgErro == "") {
-
             if ($c->cadastrar_chamados($descricao, $id_ativo, $id_usuario)) {
                 echo "<script>alert('Chamado enviado com sucesso!!')</script>";
             } else {
                 echo "<script>alert('Chamado já realizado!');</script>";
             }
-        } else {
-            echo "Erro: " . $c->msgErro;
-        }
+        
+        
     } else {
         echo "<script>alert('Preencha todos os campos!');</script>";
     }       

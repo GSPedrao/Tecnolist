@@ -15,6 +15,15 @@ h1{
     margin-left: 38%;
 }
 
+#sair{
+    margin-top: 600px;
+    margin-left: 1250px;
+    position: fixed;
+    width: 90px;
+    border: none;
+    padding: 0px 0px 0px 0px
+}
+
 .container{
     padding: 1%;
 }

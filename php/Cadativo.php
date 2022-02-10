@@ -33,6 +33,7 @@ $LNome = mysqli_fetch_assoc($resultado_nome);
 </head>
 
 <body style="background-color: #97BFEA">
+<button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button>
     <div class="ativo">
         <h1>Cadastre um ativo</h1>
         <form method="POST" class="row g-0">
