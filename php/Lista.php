@@ -28,8 +28,6 @@ if (!empty($_GET['search'])) {
 
 $result = $conn->query($sql);
 
- 
-
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +44,37 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="../css/listas.css">
 
 </head>
+
 <body>
+    <!--modal-->
+    <div id="ativoModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title">Ativo</h5>
+      <dl>
+              <dt>Patrimônio:</dt>
+              <dd><span id="MPatrimonio"></span></dd>
+              
+              <dt>descrição:</dt>
+              <dd><span id="MDescricao"></span></dd>
+
+              <dt>Tipo:</dt>
+              <dd><span id="MTipo"></span></dd>
+
+              <dt>Localização:</dt>
+              <dd><span id="MLocalizacao"></span></dd>
+              
+          </dl>
+      </div>
+      <div class="modal-footer" id="change_datail">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <header style="background-color: #97BFEA;"><button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
     <nav>
       <div class="col-md-2">
@@ -78,8 +106,8 @@ $result = $conn->query($sql);
                     <th id="ordem">Ordem</th>
                     <th id="colaborador">Colaborador</th>
                     <th id="chamado">Chamado</th>
-                    <th id="ativo">Ativo</th>
                     <th id="data">Data</th>
+                    <th id="ativo">Ativo</th>
                     <th id="status">Status</th>
                   </tr>
                     <tbody>
@@ -98,14 +126,11 @@ $result = $conn->query($sql);
                 }
             
                 echo "<td>" . $descricao . "</td>";
-            
-                $resultado_ativo = "SELECT * FROM ativo WHERE '$id_ativo' = id_ativo";
-                $re_ativo = mysqli_query($conn, $resultado_ativo);
-                while ($row_ativo = mysqli_fetch_assoc($re_ativo)) { ?>
-                <td> <?php echo $row_ativo['patrimonio']; ?> </td> <?php
-                }
-            
+
                 echo "<td>" . $data_abertura . "</td>";
+            
+                echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
+
             
                 if ($status == 1) {
             echo "<td>Em andamento</td>";
@@ -150,9 +175,10 @@ $result = $conn->query($sql);
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <script src="../JS/delete.js"></script> 
+        <script src="../JS/visAtivo.js"></script>
 </body>
 <script>
-    var search = document.getElementById('pesquisar')
+    var search = document.getElementById('pesquisar') 
 
     search.addEventListener("Keydown", function(event) { //pega a variavel e analisa a tecla que você clicou
         if (event.key === "Enter") // se for Enter ele chama a função
@@ -167,6 +193,8 @@ $result = $conn->query($sql);
     }
 
 
+    
+
 </script>
 
-</html>
+</html>  
