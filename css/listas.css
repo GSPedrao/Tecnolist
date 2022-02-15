@@ -17,14 +17,6 @@ header{
     padding: 0px 0px 0px 0px
 }
 
-h1{
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #173963;
-    margin-left: 38%;
-    margin-top: 2%;
-}
-
 .container{
     padding: 1%;
 }
@@ -92,6 +84,28 @@ table{
     padding-left: 1%;
 }
 
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30%;
+}
+
+h5{
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif; 
+    color: #000;
+    font-size: 20px;
+}
+
+dd{
+    font-family: Arial, Helvetica, sans-serif; 
+    color: #000;
+    margin-left: 2px;
+}
 
 
 /*responsivo 1200*/

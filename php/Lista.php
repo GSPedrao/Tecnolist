@@ -51,24 +51,22 @@ $result = $conn->query($sql);
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      <h5 class="modal-title">Ativo</h5>
-      <dl>
-              <dt>Patrimônio:</dt>
-              <dd><span id="MPatrimonio"></span></dd>
+        <dl>
+            <h2 id="MMpatri">Patrimônio:</h2>
+            <dd><span id="MPatrimonio"></span></dd>
               
-              <dt>descrição:</dt>
-              <dd><span id="MDescricao"></span></dd>
+            <h2 id="MMdesc">Descrição:</h2>
+            <dd><span id="MDescricao"></span></dd>
 
-              <dt>Tipo:</dt>
-              <dd><span id="MTipo"></span></dd>
+            <h2 id="MMtipo">Tipo:</h2>
+            <dd><span id="MTipo"></span></dd>
 
-              <dt>Localização:</dt>
-              <dd><span id="MLocalizacao"></span></dd>
-              
-          </dl>
+            <h2 id="MMlocal">Localização:</h2>
+            <dd><span id="MLocalizacao"></span></dd>
+        </dl>
       </div>
       <div class="modal-footer" id="change_datail">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
       </div>
     </div>
   </div>
@@ -108,7 +106,7 @@ $result = $conn->query($sql);
                     <th id="chamado">Chamado</th>
                     <th id="data">Data</th>
                     <th id="ativo">Ativo</th>
-                    <th id="status">Status</th>
+                    <th id="status">Ações</th>
                   </tr>
                     <tbody>
             <?php
