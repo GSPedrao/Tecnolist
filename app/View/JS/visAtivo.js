@@ -14,11 +14,13 @@ async function visAtivo(id_chamado){ //Função assíncronas == retorna como obe
         let posi0 = resposta['0'];
         let posi1 = resposta['1'];
         let posi2 = resposta['2'];
+        let posi3 = resposta['3'];
 
         document.getElementById('MPatrimonio').innerHTML = posi0['patrimonio'];
         document.getElementById('MDescricao').innerHTML = posi0['descricao'];
         document.getElementById('MTipo').innerHTML = posi1['descricao'];
         document.getElementById('MLocalizacao').innerHTML = posi2['descricao'];
-        
+        document.getElementById('MData').innerHTML = posi3['data_abertura']; 
+        document.getElementById('MDataF').innerHTML = posi3['data_fechamento'];           
     }
 }

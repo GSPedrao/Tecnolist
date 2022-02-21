@@ -29,7 +29,12 @@ if(!empty($id_chamado)){
     $result3->execute();
     $row3 = $result3->fetch(PDO::FETCH_ASSOC);  
 
-    $retorna = ['erro' => false, 'dados' => $row, $row1, $row2, $row3];
+    $query_usuario = "SELECT data_abertura, data_fechamento FROM chamado WHERE id_chamado = $id_chamado LIMIT 1";
+    $result = $cpdo->prepare($query_usuario);
+    $result->execute();
+    $row4 = $result->fetch(PDO::FETCH_ASSOC);
+
+    $retorna = ['erro' => false, 'dados' => $row, $row1, $row2, $row3, $row4];
 
 }else{
     $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>ERRO: Nenhum Ativo encontrado!</div>"];

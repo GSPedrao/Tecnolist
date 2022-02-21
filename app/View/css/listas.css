@@ -106,8 +106,6 @@ dd{
     color: #000;
     margin-left: 2px;
 }
-
-
 /*responsivo 1200*/
 @media screen and (max-width: 1200px){
     header{
