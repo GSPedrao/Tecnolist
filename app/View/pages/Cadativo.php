@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('../../Model/conexao.php');
 include_once('../../Model/classes/ativos.php');
 include_once('../../Model/classes/usuarios.php');

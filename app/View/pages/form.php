@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('../../Model/conexao.php');
 include_once('../../Model/classes/chamados.php');
 include('../../Model/classes/usuarios.php');
@@ -47,7 +46,7 @@ $rti = $row_ti['descricao'];
         <form method="POST" class="row g-0">
             <div class="col-md-5">
                 <label for="text" id="colar">Colaborador</label>
-                <input type="text" placeholder="Digite o seu nome" class="form-control" name="nome" id="nome" value="<?php echo $LNome['nome']; ?>" />
+                <input readonly type="text" placeholder="Digite o seu nome" class="form-control" name="nome" id="nome" value="<?php echo $LNome['nome']; ?>" />
             </div>
             <div class="col-md-5">
                 <label for="text" id="crias">Descrição</label>

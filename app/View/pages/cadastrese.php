@@ -4,8 +4,6 @@ include_once("../../Model/conexao.php");
 require_once('../../Controller/nivel.php');
 $u = new Usuario;
   
-session_start();
-  
 NivelAdm();
 ?>
 

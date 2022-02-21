@@ -1,7 +1,7 @@
 header{
     height: 100px;
-    background: url(../imgs/0.png),
-    url(../imgs/1.png);
+    background: url(../images/0.png),
+    url(../images/1.png);
     background-repeat: no-repeat, no-repeat;
     background-position: 1% 3%, 98% 3%;
     background-size: 35%, 8%;
@@ -45,7 +45,7 @@ table{
 /*responsivo 1200*/
 @media screen and (max-width: 1200px){
     header{
-        background: url(../imgs/0.png);
+        background: url(../images/0.png);
         background-repeat: no-repeat;
         background-position: center;
     }

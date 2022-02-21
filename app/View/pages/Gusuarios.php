@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include_once('../../Model/conexao.php');
 require_once('../../Controller/nivel.php');

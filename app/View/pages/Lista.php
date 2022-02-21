@@ -8,10 +8,11 @@ if (!empty($_GET['search'])) {
     $data = $_GET['search'];
 
     $sql = "SELECT * FROM chamado cha INNER JOIN usuario usr ON cha.id_usuario=usr.id_usuario
-    WHERE cha.id_chamado LIKE '%$data%' or cha.descricao LIKE '%$data%' or usr.nome LIKE '%$data%'
-    ORDER BY cha.id_chamado DESC"; 
+    WHERE cha.id_chamado LIKE '%$data%' or cha.descricao LIKE '%$data%' or usr.nome LIKE '%$data%' 
+    AND cha.status = 1
+    ORDER BY cha.id_chamado DESC";
 } else {
-    $sql = "SELECT * FROM  chamado ORDER BY id_chamado DESC";
+    $sql = "SELECT * FROM  chamado WHERE `status` = 1 ORDER BY id_chamado DESC";
 }
 
 

@@ -25,8 +25,6 @@
 
 
         <?php
-        // Inicia a sessão
-        session_start();
         //Limpa o buffer evitando problemas de redirecionamento
         ob_start();
 

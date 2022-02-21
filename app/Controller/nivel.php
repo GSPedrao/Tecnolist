@@ -23,7 +23,7 @@ function Nivel() {
     }  else if($_SESSION['ativo'] != 1) {
         header("location: ../../../index.php");
         exit;
-    }else if ($_SESSION['nivel'] != 1) {
+    }else if ($_SESSION['nivel'] != 3) {
         header("location: ../../../index.php");
         exit;
     }
