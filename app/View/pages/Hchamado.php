@@ -1,3 +1,11 @@
+<?php
+require_once('../../Controller/nivel.php');
+require_once('../../Model/conexao.php');
+
+Nivel();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

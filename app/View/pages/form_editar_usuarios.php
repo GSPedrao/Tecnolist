@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,6 +31,9 @@
         ob_start();
 
         include_once('../../Model/conexao.php');
+        require_once('../../Controller/nivel.php');
+
+        NivelAdm();
 
         // Receber os dados do formulário
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);

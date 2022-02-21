@@ -2,12 +2,9 @@
 session_start();
 
 include_once('../../Model/conexao.php');
+require_once('../../Controller/nivel.php');
 
-
-if (!isset($_SESSION['id_usuario'])) {
-    header("location: ../index.php");
-    exit;
-}
+NivelAdm();
 ?>
 
 

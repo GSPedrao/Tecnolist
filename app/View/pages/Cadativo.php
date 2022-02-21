@@ -1,14 +1,11 @@
 <?php
+session_start();
 include_once('../../Model/conexao.php');
 include_once('../../Model/classes/ativos.php');
 include_once('../../Model/classes/usuarios.php');
+require_once('../../Controller/nivel.php');
 
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    header("location: ../index.php");
-    exit;
-}
-
+NivelAdm();
 
 $nameResult = "SELECT * from usuario WHERE '$_SESSION[id_usuario]' = id_usuario";
 $resultado_nome = mysqli_query($conn, $nameResult);

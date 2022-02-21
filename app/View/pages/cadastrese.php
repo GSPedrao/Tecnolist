@@ -1,14 +1,12 @@
 <?php
-  require_once("../../Model/classes/usuarios.php");
-  include_once("../../Model/conexao.php");
-  $u = new Usuario;
+require_once("../../Model/classes/usuarios.php");
+include_once("../../Model/conexao.php");
+require_once('../../Controller/nivel.php');
+$u = new Usuario;
   
-  session_start();
-  if(!isset($_SESSION['id_usuario']))
-  {
-      header("location: ../index.php");
-      exit;
-  } 
+session_start();
+  
+NivelAdm();
 ?>
 
 <!DOCTYPE html>

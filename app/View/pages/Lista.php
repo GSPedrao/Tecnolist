@@ -1,9 +1,8 @@
 <?php
-
 require_once('../../Controller/nivel.php');
 require_once('../../Model/conexao.php');
    
-$nivel;
+NivelAdm();
 
 if (!empty($_GET['search'])) {
     $data = $_GET['search'];
@@ -121,14 +120,6 @@ $result = $conn->query($sql);
             
                 echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
 
-            
-                if ($status == 1) {
-            echo "<td>Em andamento</td>";
-                }else{
-            echo "<td>Concluído</td>";
-            
-                }
-            
                  echo "<td>
             
             <a href='../../Model/deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>

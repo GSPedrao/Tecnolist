@@ -3,6 +3,9 @@ session_start();
 include_once('../../Model/conexao.php');
 include_once('../../Model/classes/chamados.php');
 include('../../Model/classes/usuarios.php');
+require_once('../../Controller/nivel.php');
+
+Nivel();
 
 
 
