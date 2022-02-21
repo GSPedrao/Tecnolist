@@ -3,6 +3,7 @@ session_start();
 
 include_once('../../Model/conexao.php');
 
+
 if (!isset($_SESSION['id_usuario'])) {
     header("location: ../index.php");
     exit;
@@ -27,7 +28,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
 
 <body>
-    <header style="background-color: #97BFEA"><button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
+    <header style="background-color: #97BFEA"><button onclick="(function(){ window.open('Lista.php', '_self');})()"  id="sair" style="border-radius: 30px;">Voltar</button></header>
     <h1>Gerenciar Usuários</h1>
 
     <div class="container">
@@ -77,6 +78,7 @@ if (!isset($_SESSION['id_usuario'])) {
                         } else {
                             echo "<td> Inativo</td>";
                         }
+
                         echo "</tr>";
                     }
                     ?>
@@ -91,6 +93,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
     echo "</form>"; //fim do form
     ?>
+
 
 </body>
 

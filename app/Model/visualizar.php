@@ -1,5 +1,5 @@
 <?php
-include_once('conecao.php');
+include_once('../Model/conexao.php');
 
 $id_chamado = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 

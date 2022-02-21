@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../css/cadastraUser.css">
 </head>
 <body style="background-color: #97BFEA">
-<button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button>
+<button onclick="(function(){ window.open('Lista.php', '_self');})()"  id="sair" style="border-radius: 30px;">Voltar</button>
     <div class="cadastreSe">
         <h1>Cadastre um usuário</h1>
             <form method="POST" class="row g-0">

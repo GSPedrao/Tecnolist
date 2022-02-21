@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/Hchamado.css">
 </head>
 <body>
-    <header style="background-color: #97BFEA;"><button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
+    <header style="background-color: #97BFEA;"><button onclick="(function(){ window.open('../../Controller/sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
         <h1>Histórico de chamada</h1>
             <div class="container">
                 <div class="table-responsive">
@@ -24,6 +24,8 @@
                             </tr>
 
                             <tbody>
+
+                            
                             </tbody>
                     </table>
                     <div class="botao">

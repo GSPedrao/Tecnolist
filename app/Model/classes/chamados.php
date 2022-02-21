@@ -11,7 +11,6 @@ Class Chamado
         $sql = $cpdo->prepare("SELECT id_chamado from chamado where descricao = :d"); //procura se já existe um usuario cadastrado
         $sql->bindValue(":d", $descricao);
 
-
         if($sql->rowCount() > 0)
         {
             return false; //já cadastrado

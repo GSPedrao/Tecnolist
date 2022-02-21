@@ -8,14 +8,16 @@
     <title>Gerenciar usuarios</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!--Bootstrap 4.1 js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/form_editar_usuarios.css">
 </head>
 
 
 <body>
-    <header style="background-color: #97BFEA"><button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
+    <header style="background-color: #97BFEA"><button onclick="(function(){ window.open('Gusuarios.php', '_self');})()"  id="sair" style="border-radius: 30px;">Voltar</button></header>
     <h1>Editar usuários</h1>
 
     <div class="container border border-2">
@@ -47,7 +49,7 @@
 
 
             // Inicio do form
-            echo "<form method='POST' action='proc_editar_usuarios.php'>";
+            echo "<form method='POST' action='../../Model/proc_editar_usuarios.php'>";
 
             // Ler os registros retornados do BD
             while ($row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC)) { // Atribui o valor a matriz associativa
@@ -66,6 +68,15 @@
                     echo "<option value='1'>Ativo</option>";
                     echo "<option value='2' selected>Inativo</option></select>";
                 }
+                echo "<td>
+            
+            <a href='../../Model/deletar_usuario.php?id=$id_usuario' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash-fill' viewBox='0 0 16 16'>
+                <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
+                </svg>
+            
+            </a>
+            </td>";
             }
         ?>
     </div>
@@ -83,6 +94,8 @@
         }
 
 ?>
+
+  <script src="../JS/delete.js"></script>
 
 
 </body>

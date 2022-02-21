@@ -27,7 +27,7 @@ session_start();
 //Limpa o buffer evitando problemas de redirecionamento
 ob_start();
 // Incluir conexão
-include_once('../../Model/conexao.php');
+include_once('conexao.php');
 // Receber os dados do form_editar_usuarios.php
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 //var_dump($dados);
@@ -59,12 +59,12 @@ if (!empty($dados['editUsuarios'])) {
      // Variavel global com mensagem de erro
      $_SESSION['msg'] = "<p style='color: green;'>Erro: Usuario editado com sucesso</p>";
      // Redirecionamento
-     header("location: Gusuarios.php");
+     header("location: ../View/pages/Gusuarios.php");
 
 
 } else {
     // Variavel global com mensagem de erro
     $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuario não foi possível editar</p>";
     // Redirecionamento
-    header("location: Gusuarios.php");
+    header("location: ../View/pages/Gusuarios.php");
 }

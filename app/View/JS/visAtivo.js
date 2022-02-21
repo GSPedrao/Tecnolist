@@ -2,7 +2,7 @@ const msgAlerta = document.getElementById("msgAlerta");
 
 async function visAtivo(id_chamado){ //Função assíncronas == retorna como obejeto
    // console.log("Acessou" + id_chamado);
-    const dados = await fetch('visualizar.php?id=' + id_chamado); //Cria constante dados, aonde espera o Método Get passando id_chamado    
+    const dados = await fetch('../../Model/visualizar.php?id=' + id_chamado); //Cria constante dados, aonde espera o Método Get passando id_chamado    
     const resposta = await dados.json();
     console.log(resposta);
 

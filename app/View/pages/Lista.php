@@ -63,8 +63,8 @@ $result = $conn->query($sql);
 </div>
 
 
-    <header style="background-color: #97BFEA;"><button onclick="(function(){ window.open('sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
-    <nav>
+    <header style="background-color: #97BFEA;"><button onclick="(function(){ window.open('../../Controller/sair.php', '_self');})()"  id="sair" style="border-radius: 30px;">Sair</button></header>
+    <nav> 
         <!--Campo de pesquisa-->
       <div class="col-md-2">
         <input type="text" class="form-control" name="pesquisa" id="pesquisar">
@@ -168,7 +168,7 @@ $result = $conn->query($sql);
         <script src="../JS/visAtivo.js"></script>
 </body>
 <script>
-    var search = document.getElementById('pesquisar') 
+var search = document.getElementById('pesquisar') 
 
     search.addEventListener("Keydown", function(event) { //pega a variavel e analisa a tecla que você clicou
         if (event.key === "Enter") // se for Enter ele chama a função
@@ -181,9 +181,6 @@ $result = $conn->query($sql);
     function searchData() {
         window.location = 'Lista.php?search=' + search.value;
     }
-
-
-    
 
 </script>
 
