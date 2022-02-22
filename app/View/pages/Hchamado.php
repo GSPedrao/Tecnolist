@@ -67,7 +67,7 @@ $result2 =  $conn->query($fechado);
 
     <div class="container w-25">
         <div class="divt1">
-            <h2 id='cAberto'>Chamados em aberto</h2>
+            <p id='cAberto'>Chamados em aberto</p>
             <table class="table" id="tabela1">
                 <thead>
                     <tr>
@@ -98,7 +98,7 @@ $result2 =  $conn->query($fechado);
             </table>
         </div>
         <div class="divt2">
-            <h2 id="cFechada">Chamados Fechados</h2>
+            <p id="cFechada">Chamados Fechados</p>
             <table class="table" id="tabela2">
                 <thead>
                     <tr>

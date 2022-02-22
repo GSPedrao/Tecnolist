@@ -16,19 +16,6 @@
     padding: 0px 0px 0px 0px
 }
 
-#NewCall{
-    margin-top: 20px;
-    margin-left: 40%;
-    width: 150px;  
-    margin-bottom: 5px;
-}
-
-/* #cFechada{
-    margin-bottom: 0px;
-    margin-top: 50px;
-} 
- */
- 
 h1{
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
@@ -69,15 +56,33 @@ table{
 }
 
 .container{
-    padding: 1%;
+    padding: 5%;
     display: inline-flex;
-    margin-left: 25%;
+    margin-left: 10%;
 
 }
+
+#tabela1{
+    margin-top: 0px;
+    width: 180%;
+}
+
 #tabela2{
-    margin-left: 30px;
+    margin-top: 0px;
+    margin-left: 250px;
 }
 
+#cAberto{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 50px;
+}
+
+#cFechada{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 300px;
+}
 
 /*responsivo 1200*/
 @media screen and (max-width: 1200px){
@@ -98,5 +103,20 @@ table{
         margin-left: 30%;
     }
 
+    .container{
+        display: block;
+    }
 
+    #tabela2{
+        margin-left: 0px;
+    }
+
+    #cAberto{
+        margin-left: 0px;
+    }
+    
+    #cFechada{
+        margin-top: 50px;
+        margin-left: 0px;
+    }
 }
