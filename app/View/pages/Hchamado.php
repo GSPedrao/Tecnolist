@@ -44,7 +44,7 @@ $result2 =  $conn->query($fechado);
 
                         <h2 id="MMlocal">Localização:</h2>
                         <dd><span id="MLocalizacao"></span></dd>
-                        
+
                         <h2 id="MMData">Data de abertura:</h2>
                         <dd><span id="MData"></span></dd>
 
@@ -62,96 +62,86 @@ $result2 =  $conn->query($fechado);
     <header style="background-color: #97BFEA;"><button onclick="(function(){ window.open('../../Controller/sair.php', '_self');})()" id="sair" style="border-radius: 30px;">Sair</button></header>
     <h1>Histórico de chamada</h1>
 
-        <div class="container">
-            
-                <h2 id='cAberto'>Chamados em aberto</h2>
-                <div class="table-responsive">
-                    <table class="table" id="tabela1">
-                        <thead>
-                            <tr>
-                                <th>Chamado</th>
-                                <th>Ativo</th>
-                                <th>Ações</th>
-                            </tr>
 
-                        <tbody>
-                            <?php
-                            while ($chamado_data = $result->fetch_assoc()) //enquanto chamada_data receber o result e retornar matriz associativa
-                            {
-                                //var_dump($chamado_data);
-                                extract($chamado_data); //extrair o chamado_data
-                                echo "<tr>";
 
-                                echo "<td>" . $descricao . "</td>";
 
-                                echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
-
-                                echo "<td>
-                    
-                                <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
-                                <i class='fa-solid fa-trash'></i>
-                                
-                                </a>
-                                </td>";
-                                echo "</tr>";
-                            }
-
-                            ?>
-                        </tbody>
-                    </table>
-
-                </div>
+    <div class="container w-25">
+        <div class="divt1">
+            <h2 id='cAberto'>Chamados em aberto</h2>
+            <table class="table" id="tabela1">
+                <thead>
+                    <tr>
+                        <th>Chamado</th>
+                        <th>Ativo</th>
+                        <th>Ações</th>
+                    </tr>
+                <tbody>
+                    <?php
+                    while ($chamado_data = $result->fetch_assoc()) //enquanto chamada_data receber o result e retornar matriz associativa
+                    {
+                        //var_dump($chamado_data);
+                        extract($chamado_data); //extrair o chamado_data
+                        echo "<tr>";
+                        echo "<td>" . $descricao . "</td>";
+                        echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
+                        echo "<td>
                 
-                    <h2 id="cFechada">Chamados Fechados</h2>
-                    <div class="table-responsive">
-                        <table class="table" id="tabela2">
-                            <thead>
-                                    <tr>
-                                        <th>Chamado</th>
-                                        <th>Ativo</th>
-                                        <th>Ações</th>
-                                    </tr>   
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($chamado_data2 = $result2->fetch_assoc()) //enquanto chamada_data receber o result e retornar matriz associativa
-                                {
-                                    //var_dump($chamado_data2);
-                                    extract($chamado_data2); //extrair o chamado_data
-                                    echo "<tr>";
-
-                                    echo "<td>" . $descricao . "</td>";
-
-                                    echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
-
-                                    echo "<td>
-                    
-                                    <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
-                                    <i class='fa-solid fa-trash'></i>
-                                    </a>
-                                    </td>";
-                                    
-                                    echo "</tr>";
-                                }
-
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-         
-
+                                                    <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                                                    <i class='fa-solid fa-trash'></i>
                 
-           
+                                                    </a>
+                                                    </td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
-            <div class="botao">
-                <button button onclick="(function(){ window.open('form.php', '_self');})()" type="submit" id="NewCall" style="border-radius: 30px; background-color: #124A86" class="btn btn-primary">Nova chamada</button>
-            </div>  
+        <div class="divt2">
+            <h2 id="cFechada">Chamados Fechados</h2>
+            <table class="table" id="tabela2">
+                <thead>
+                    <tr>
+                        <th>Chamado</th>
+                        <th>Ativo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($chamado_data2 = $result2->fetch_assoc()) //enquanto chamada_data receber o result e retornar matriz associativa
+                    {
+                        //var_dump($chamado_data2);
+                        extract($chamado_data2); //extrair o chamado_data
+                        echo "<tr>";
+                        echo "<td>" . $descricao . "</td>";
+                        echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
+                        echo "<td>
+                
+                                                        <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                                                        <i class='fa-solid fa-trash'></i>
+                                                        </a>
+                                                        </td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="botao">
+        <button button onclick="(function(){ window.open('form.php', '_self');})()" type="submit" id="NewCall" style="border-radius: 30px; background-color: #124A86" class="btn btn-primary">Nova chamada</button>
+    </div>
+
 
     <!--Bootstrap 4.1 js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="../JS/visAtivo.js"></script>       
+    <script src="../JS/visAtivo.js"></script>
     <script src="../JS/delete.js"></script>
 
 </body>
