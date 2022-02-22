@@ -152,6 +152,7 @@ $result = $conn->query($sql);
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <script src="../JS/delete.js"></script> 
         <script src="../JS/visAtivo.js"></script>
+        <script src="../JS//concluir.js"></script>
 </body>
 <script>
 var search = document.getElementById('pesquisar') 

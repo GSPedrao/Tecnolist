@@ -63,7 +63,8 @@ $result2 =  $conn->query($fechado);
     <h1>Histórico de chamada</h1>
 
         <div class="container">
-            <h2 id='cAberto'>Chamados em aberto</h2>
+            
+                <h2 id='cAberto'>Chamados em aberto</h2>
                 <div class="table-responsive">
                     <table class="table" id="tabela1">
                         <thead>
@@ -87,7 +88,7 @@ $result2 =  $conn->query($fechado);
 
                                 echo "<td>
                     
-                                <a href='../../Model/deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                                <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
                                 <i class='fa-solid fa-trash'></i>
                                 
                                 </a>
@@ -100,8 +101,8 @@ $result2 =  $conn->query($fechado);
                     </table>
 
                 </div>
-        
-                <h2 id="cFechada">Chamados Fechados</h2>
+                
+                    <h2 id="cFechada">Chamados Fechados</h2>
                     <div class="table-responsive">
                         <table class="table" id="tabela2">
                             <thead>
@@ -125,9 +126,8 @@ $result2 =  $conn->query($fechado);
 
                                     echo "<td>
                     
-                                    <a href='../../Model/deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                                    <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
                                     <i class='fa-solid fa-trash'></i>
-
                                     </a>
                                     </td>";
                                     
@@ -138,10 +138,10 @@ $result2 =  $conn->query($fechado);
                             </tbody>
                         </table>
                     </div>
-                
+         
 
                 
-            </div>
+           
         </div>
             <div class="botao">
                 <button button onclick="(function(){ window.open('form.php', '_self');})()" type="submit" id="NewCall" style="border-radius: 30px; background-color: #124A86" class="btn btn-primary">Nova chamada</button>
@@ -151,7 +151,8 @@ $result2 =  $conn->query($fechado);
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="../JS/visAtivo.js"></script>
+    <script src="../JS/visAtivo.js"></script>       
+    <script src="../JS/delete.js"></script>
 
 </body>
 

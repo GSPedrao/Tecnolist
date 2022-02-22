@@ -67,7 +67,7 @@ $rti = $row_ti['descricao'];
                                     ?>
                 </select>
 
-                <input id="butaozin" class="btn btn-primary" style="border-radius: 30px; background-color: #124A86" type="submit">
+                <input id="butaozin" class="btn btn-primary" value="Fazer pedido" style="border-radius: 30px; background-color: #124A86" type="submit">
         </form>
     </div>
     <br>

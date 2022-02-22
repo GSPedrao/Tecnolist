@@ -18,5 +18,9 @@
 
      }
  }
- header('Location: ../View/pages/Lista.php');
+      if($_SESSION['ativo'] == 2){
+         header('Location: ../View/pages/Lista.php');
+      }else{
+         header('location: ../View/pages/Hchamado.php');
+      }
  ?>
