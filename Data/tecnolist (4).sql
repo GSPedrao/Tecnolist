@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Fev-2022 às 18:04
--- Versão do servidor: 10.1.38-MariaDB
--- versão do PHP: 5.6.40
+-- Tempo de geração: 22-Fev-2022 às 19:01
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -17,6 +16,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `tecnolist`
+--
 
 -- --------------------------------------------------------
 
@@ -74,7 +77,8 @@ INSERT INTO `chamado` (`id_chamado`, `descricao`, `data_abertura`, `data_fechame
 (22, 'dasfsgcvdgadsf', '2022-02-08 09:49:48', '0000-00-00 00:00:00', 0x32, 4, 1),
 (23, 'dsfadsgqabshdgfss', '2022-02-08 09:49:52', '0000-00-00 00:00:00', 0x32, 4, 1),
 (24, 'dsgtiylukythgrsethu', '2022-02-08 09:49:56', '0000-00-00 00:00:00', 0x32, 1, 1),
-(25, 'edferwgt5hy6ju7kiolpÃ§lokijuhgtfdcs', '2022-02-08 09:50:01', '0000-00-00 00:00:00', 0x32, 4, 1);
+(25, 'edferwgt5hy6ju7kiolpÃ§lokijuhgtfdcs', '2022-02-08 09:50:01', '0000-00-00 00:00:00', 0x32, 4, 1),
+(40, 'dfsagghfjshdgklkjçh', '2022-02-18 14:22:49', '0000-00-00 00:00:00', 0x31, 9, 17);
 
 -- --------------------------------------------------------
 
@@ -84,17 +88,16 @@ INSERT INTO `chamado` (`id_chamado`, `descricao`, `data_abertura`, `data_fechame
 
 CREATE TABLE `grupo_de_usuario` (
   `id_grupo` int(11) NOT NULL,
-  `nome_grupo` varchar(45) NOT NULL,
-  `nivel` int(1) NOT NULL
+  `nome_grupo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `grupo_de_usuario`
 --
 
-INSERT INTO `grupo_de_usuario` (`id_grupo`, `nome_grupo`, `nivel`) VALUES
-(2, 'tecnico', 2),
-(3, 'colaborador', 1);
+INSERT INTO `grupo_de_usuario` (`id_grupo`, `nome_grupo`) VALUES
+(2, 'tecnico'),
+(3, 'colaborador');
 
 -- --------------------------------------------------------
 
@@ -153,20 +156,20 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `senha`, `ativo`, `id_grupo`) VALUES
 (1, 'joao', '202cb962ac59075b964b07152d234b70', 0x31, 2),
-(2, 'Pedro Paulo e Alex em forma de pegador oooh oooh', '202cb962ac59075b964b07152d234b70', 0x31, 3),
+(2, 'Pedro Paulo e Alex em forma de pegador oooh oooh', '202cb962ac59075b964b07152d234b70', 0x32, 3),
 (12, 'robertinhos', '202cb962ac59075b964b07152d234b70', 0x32, 3),
 (13, '', '95dd1694c7aee356e93c9525cf3005d9', 0x31, 2),
 (14, 'picolo', '202cb962ac59075b964b07152d234b70', 0x32, 3),
-(15, 'Kevic', '202cb962ac59075b964b07152d234b70', 0x32, 3),
+(15, 'pedro', '202cb962ac59075b964b07152d234b70', 0x31, 3),
 (16, 'Relampago Kevoso', '202cb962ac59075b964b07152d234b70', 0x31, 3),
-(17, 'joel', '202cb962ac59075b964b07152d234b70', 0x31, 3);
+(17, 'joel', '202cb962ac59075b964b07152d234b70', 0x32, 3);
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `ativo`
+-- Índices para tabela `ativo`
 --
 ALTER TABLE `ativo`
   ADD PRIMARY KEY (`id_ativo`,`id_usuario`),
@@ -175,7 +178,7 @@ ALTER TABLE `ativo`
   ADD KEY `fk_ativo_localizacao1` (`id_localizacao`);
 
 --
--- Indexes for table `chamado`
+-- Índices para tabela `chamado`
 --
 ALTER TABLE `chamado`
   ADD PRIMARY KEY (`id_chamado`,`id_ativo`,`id_usuario`),
@@ -183,72 +186,72 @@ ALTER TABLE `chamado`
   ADD KEY `fk_chamado_usuario1` (`id_usuario`);
 
 --
--- Indexes for table `grupo_de_usuario`
+-- Índices para tabela `grupo_de_usuario`
 --
 ALTER TABLE `grupo_de_usuario`
   ADD PRIMARY KEY (`id_grupo`);
 
 --
--- Indexes for table `localizacao`
+-- Índices para tabela `localizacao`
 --
 ALTER TABLE `localizacao`
   ADD PRIMARY KEY (`id_localizacao`);
 
 --
--- Indexes for table `tipo`
+-- Índices para tabela `tipo`
 --
 ALTER TABLE `tipo`
   ADD PRIMARY KEY (`id_tipo`);
 
 --
--- Indexes for table `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`),
   ADD KEY `id_grupo` (`id_grupo`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `ativo`
+-- AUTO_INCREMENT de tabela `ativo`
 --
 ALTER TABLE `ativo`
   MODIFY `id_ativo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `chamado`
+-- AUTO_INCREMENT de tabela `chamado`
 --
 ALTER TABLE `chamado`
-  MODIFY `id_chamado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_chamado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT for table `grupo_de_usuario`
+-- AUTO_INCREMENT de tabela `grupo_de_usuario`
 --
 ALTER TABLE `grupo_de_usuario`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `localizacao`
+-- AUTO_INCREMENT de tabela `localizacao`
 --
 ALTER TABLE `localizacao`
   MODIFY `id_localizacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tipo`
+-- AUTO_INCREMENT de tabela `tipo`
 --
 ALTER TABLE `tipo`
   MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Constraints for dumped tables
+-- Restrições para despejos de tabelas
 --
 
 --
