@@ -1,3 +1,8 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="App/View/images/thumbnail_TecnoListLogo.png" type="image/x-icon">
+    </head>
+</html>
 <?php
     require_once('app/View/pages/index.html');
     require_once('app/Model/classes/usuarios.php');
@@ -31,7 +36,4 @@
             
             
         }
-        ?>
-    	
-</body>
-</html>
+?>

@@ -15,6 +15,7 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/form_editar_usuarios.css">
     <script src="https://kit.fontawesome.com/4b8fc74479.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../images/thumbnail_TecnoListLogo.png" type="image/x-icon">
 </head>
 
 
