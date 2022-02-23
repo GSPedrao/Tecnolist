@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+session_start(); 
 
 function NivelAdm() {
    if (!isset($_SESSION['id_usuario'])) {
