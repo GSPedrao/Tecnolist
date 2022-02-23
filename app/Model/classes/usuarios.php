@@ -30,7 +30,9 @@ Class Usuario
 
         if($sql->rowCount() > 0)
         {
+            $_SESSION['msg'] = '<div style="color: red; text-align: center;">Usuário já cadastrado!!</div>';
             return false; //já cadastrado
+    
         }else{
             //se não, cadastrar
             $sql = $pdo->prepare("INSERT INTO usuario (nome, senha, id_grupo) VALUES (:n, :s, :g)");
@@ -38,6 +40,7 @@ Class Usuario
             $sql->bindValue(":s",md5($senha)); //md5 : Criptografa a senha
             $sql->bindValue(":g", $grupo);
             $sql->execute();
+            $_SESSION['msg'] = '<div style="color: green; text-align: center;">Usuário cadastrado com sucesso!!</div>';
 
             return true;  
         }
@@ -58,42 +61,42 @@ Class Usuario
               //Entrar
               $dado = $sql->fetch(); 
               session_start();  
-              $_SESSION['id_usuario'] = $dado['id_usuario'];
+              $_SESSION['id_usuario'] = $dado['id_usuario']; // Guarda id_usuario em uma sessão
              
               
  
               //nivel de acesso
-              $verificar = $pdo->query("SELECT * FROM usuario"); //procura coluna para nivel de acesso
-              while ($linha = $verificar->fetch(PDO::FETCH_ASSOC)){ //enquanto 
-                 if($linha['nome'] == $nome){   //se variavel linha for igual ao nome
-                  $nivel = $linha['id_grupo']; // linha recebe valor da coluna nivel
+              $verificar = $pdo->query("SELECT * FROM usuario"); // Consulta coluna para nivel de acesso
+              while ($linha = $verificar->fetch(PDO::FETCH_ASSOC)){ // enquanto variável Busca atravez do PDO
+                 if($linha['nome'] == $nome){   // Se variavel linha for igual ao nome
+                  $nivel = $linha['id_grupo']; // Linha recebe valor da coluna nivel
                   $ativo = $linha['ativo']; // Recebe o valor da coluna ativo
 
-                  switch ($nivel && $ativo) {
-                    case ($nivel == 2 && $ativo == 1):
+                  switch ($nivel && $ativo) {  
+                    case ($nivel == 2 && $ativo == 1): // Caso for técnico e ativo
                         header("location: ./app/View/pages/Lista.php");   
                     break;
 
-                    case ($nivel == 2 && $ativo == 2):
+                    case ($nivel == 2 && $ativo == 2): // Caso for técnico e inativo
                         echo "Erro";
                     break;
 
-                    case ($nivel == 3 && $ativo == 1):
+                    case ($nivel == 3 && $ativo == 1): // Caso for colaborador e ativo
                         header("location: ./app/View/pages/Hchamado.php");
                     break;
 
-                    case ($nivel == 3 && $ativo == 2):
+                    case ($nivel == 3 && $ativo == 2): // Caso for colaborador e inativo
                         echo "Erro";
                     break;
 
-                     default:
+                     default: // Caso nenhum
                     echo "Usuario sem acesso";
                     break;
                    }  
 
 
-                   $_SESSION['ativo'] = $ativo;
-                   $_SESSION['nivel'] = $nivel;
+                   $_SESSION['ativo'] = $ativo; // Guarda ativo em uma sessão
+                   $_SESSION['nivel'] = $nivel; // Guarda nivel em uma sessão
                    
                   }
                 }

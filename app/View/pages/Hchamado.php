@@ -2,11 +2,14 @@
 require_once('../../Controller/nivel.php');
 require_once('../../Model/conexao.php');
 
+// Chama nivel de acesso
 Nivel();
 
+// Consulta todos do chamado onde o id_usuario é igual a variável global e status 1 
 $sql =   "SELECT * FROM chamado WHERE id_usuario = '$_SESSION[id_usuario]' AND `status` = 1 ORDER BY id_chamado Desc";
 $result = $conn->query($sql);
 
+// Consulta todos do chamado onde o id_usuario é igual a variável global e status 2 
 $fechado = "SELECT * FROM chamado WHERE id_usuario = '$_SESSION[id_usuario]' AND `status` = 2 ORDER BY id_chamado Desc";
 $result2 =  $conn->query($fechado);
 ?>
@@ -60,12 +63,11 @@ $result2 =  $conn->query($fechado);
         </div>
     </div>
 
+    <!--Sair-->
     <header style="background-color: #97BFEA;"><button onclick="(function(){ window.open('../../Controller/sair.php', '_self');})()" id="sair" style="border-radius: 30px;">Sair</button></header>
     <h1>Histórico de chamada</h1>
 
-
-
-
+    <!--Tabela 1-->
     <div class="container w-25">
         <div class="divt1">
             <p id='cAberto'>Chamados em aberto</p>
@@ -78,25 +80,25 @@ $result2 =  $conn->query($fechado);
                     </tr>
                 <tbody>
                     <?php
-                    while ($chamado_data = $result->fetch_assoc()) //enquanto chamada_data receber o result e retornar matriz associativa
+                    while ($chamado_data = $result->fetch_assoc()) // Executa o while se der certo execução do comando
                     {
                         //var_dump($chamado_data);
                         extract($chamado_data); //extrair o chamado_data
                         echo "<tr>";
                         echo "<td>" . $descricao . "</td>";
                         echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
+                        // Link deletar
                         echo "<td>
-                
-                                                    <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
-                                                    <i class='fa-solid fa-trash'></i>
-                
-                                                    </a>
-                                                    </td>";
+                        <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                        <i class='fa-solid fa-trash'></i>
+                        </a>
+                        </td>";
                         echo "</tr>";
                     }
                     ?>
                 </tbody>
             </table>
+            <!--Tabela 2-->
         </div>
         <div class="divt2">
             <p id="cFechada">Chamados Fechados</p>
@@ -110,19 +112,19 @@ $result2 =  $conn->query($fechado);
                 </thead>
                 <tbody>
                     <?php
-                    while ($chamado_data2 = $result2->fetch_assoc()) //enquanto chamada_data receber o result e retornar matriz associativa
+                    while ($chamado_data2 = $result2->fetch_assoc()) // Executa o while se der certo execução do comando
                     {
                         //var_dump($chamado_data2);
                         extract($chamado_data2); //extrair o chamado_data
                         echo "<tr>";
                         echo "<td>" . $descricao . "</td>";
                         echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
+                        // Link Deletar
                         echo "<td>
-                
-                                                        <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
-                                                        <i class='fa-solid fa-trash'></i>
-                                                        </a>
-                                                        </td>";
+                        <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                        <i class='fa-solid fa-trash'></i>
+                        </a>
+                        </td>";
                         echo "</tr>";
                     }
                     ?>
@@ -132,7 +134,7 @@ $result2 =  $conn->query($fechado);
     </div>
 
 
-
+         <!--Botão-->
     <div class="botao">
         <button button onclick="(function(){ window.open('form.php', '_self');})()" type="submit" id="NewCall" style="border-radius: 30px; background-color: #124A86" class="btn btn-primary">Nova chamada</button>
     </div>

@@ -6,13 +6,17 @@
 <?php
     require_once('app/View/pages/index.html');
     require_once('app/Model/classes/usuarios.php');
+    require_once('app/Controller/msg.php');
     $u = new Usuario;
 
          //Verificar se clicou no botao
          if(isset($_POST['nome']))
         {
+            // Determinados campos recebe valor das inputs
              $nome = addslashes($_POST['nome']);
              $senha = addslashes($_POST['senha']);
+              // addslashes = A função addslashes foi por algum tempo uma solução eficaz para escapar determinados caracteres na inserção de dados em banco de dados
+
              //verificar se está vazio
              if(!empty($nome) && !empty($senha))
             {
@@ -21,7 +25,7 @@
                 {
                     if(!$u->logar($nome, $senha));
                     {
-                        echo "<script>alert('Nome e/ou senha incorretos'</script>";
+                        echo msgErro('');
                     }
                 }
                 else

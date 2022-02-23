@@ -2,7 +2,9 @@
 
 include_once('../../Model/conexao.php');
 require_once('../../Controller/nivel.php');
+require_once('../../Controller/msg.php');
 
+// Chama nivel de acesso
 NivelAdm();
 ?>
 
@@ -31,12 +33,8 @@ NivelAdm();
     <div class="container">
 
         <?php
-        // Verificar se existe a mensagem
-        if (isset($_SESSION['msg'])) {
-            echo $_SESSION['msg'];
-            unset($_SESSION['msg']);
-        }
-
+            // Chama a mensagem de erro
+            msgErro();
 
 
         //Recuperar os usuarios do banco de dados

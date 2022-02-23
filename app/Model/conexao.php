@@ -4,6 +4,7 @@ $usuario = "root";
 $senha = "";
 $dataBase = "tecnolist";
 
+ // Varíavel de conexão com o banco
 $conn = mysqli_connect($host, $usuario, $senha, $dataBase);
 
 if($conn->connect_errno){
@@ -12,7 +13,7 @@ if($conn->connect_errno){
 
     //conexão com PDO
     try{
-        //conexão sem a porta
+    
         $cpdo = new PDO("mysql::host=$host;dbname=" . $dataBase, $usuario, $senha);
         
         //echo "Conexão do banco realizado com sucesso!";

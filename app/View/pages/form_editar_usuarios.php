@@ -33,6 +33,7 @@
         include_once('../../Model/conexao.php');
         require_once('../../Controller/nivel.php');
 
+        // Chama nivel de acesso
         NivelAdm();
 
         // Receber os dados do formulário
@@ -46,7 +47,7 @@
 
             // Recuperar os usuarios do banco de dados
             $query_usuario = "SELECT id_usuario, nome, ativo FROM usuario 
-        WHERE id_usuario IN ($valor_pesq) ORDER BY id_usuario DESC";
+            WHERE id_usuario IN ($valor_pesq) ORDER BY id_usuario DESC";
 
             $result_usuario = $cpdo->prepare($query_usuario); // Preparando a query
             $result_usuario->execute(); // Executa a query
@@ -61,12 +62,12 @@
                 extract($row_usuario);
                 echo "<input type='hidden' name='id_usuario[]' value='$id_usuario'>";
                 echo "<label id='Lnome'>Nome</label> <input type='text' class='form-control' name='nome[]' value='$nome' placeholder='Nome do usuario'> <br><br>";
-                if ($ativo == 1) {
+                if ($ativo == 1) { // Se o usuário selecionado for ativo mostre primeiro esta função
                     echo "<label id='Lstatus'>Status</label>
                      <select name='ativo[]' id='InputStatus' class='form-select' value='$ativo'>";
                     echo "<option value='1' selected>Ativo</option>";
                     echo "<option value='2'>Inativo</option></select>";
-                } else {
+                } else { // Senão
                     echo "<label id='Lstatus'>Status</label>
                      <select name='ativo[]' id='InputStatus' class='form-select' value='$ativo'>";
                     echo "<option value='1'>Ativo</option>";

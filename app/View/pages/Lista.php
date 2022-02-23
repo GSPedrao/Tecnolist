@@ -1,21 +1,26 @@
 <?php
 require_once('../../Controller/nivel.php');
 require_once('../../Model/conexao.php');
-   
+  
+// Chama nivel de acesso
 NivelAdm();
 
-if (!empty($_GET['search'])) {
-    $data = $_GET['search'];
+// Se o campo de pesquisa não estiver vazio
+if (!empty($_GET['search'])) { 
 
+    $data = $_GET['search']; // variável recebe o valor digitado 
+
+    // Seleciona todos da tabela chamado e usuário onde o id do usuário e igual nas duas, que busca o valor digitado entre os campos e o status é correspondente a 1
     $sql = "SELECT * FROM chamado cha INNER JOIN usuario usr ON cha.id_usuario=usr.id_usuario
     WHERE cha.id_chamado LIKE '%$data%' or cha.descricao LIKE '%$data%' or usr.nome LIKE '%$data%' 
     AND cha.status = 1
     ORDER BY cha.id_chamado DESC";
-} else {
-    $sql = "SELECT * FROM  chamado WHERE `status` = 1 ORDER BY id_chamado DESC";
+} else { // Senão
+      // Seleciona todos do chamado onde status é = 1
+      $sql = "SELECT * FROM  chamado WHERE `status` = 1 ORDER BY id_chamado DESC";
 }
 
-
+// faz uma busca entre os campos
 $result = $conn->query($sql);
 
 ?>
@@ -70,24 +75,26 @@ $result = $conn->query($sql);
         <input type="text" class="form-control" name="pesquisa" id="pesquisar">
       </div>
           <button onclick="searchData()" class="botao0" type="submit"></button>
-          
-
+          <!--Gerenciar usuários-->
         <div class="bioma">
             <div class="d-grid gap-4">
              <button onclick="(function(){ window.open('Gusuarios.php', '_self');})()"  id="botao7"  style="border-radius: 30px; background-color: #124A86;" class="btn btn-primary" type="submit">Gerenciar usuário</button>
             </div>
         </div>
+        <!--Cadastrar ativo-->
         <div class="botao">
             <div class="d-grid gap-4">
              <button onclick="(function(){ window.open('Cadativo.php', '_self');})()"  id="botao1"  style="border-radius: 30px; background-color: #124A86" class="btn btn-primary" type="submit">Cadastrar Ativo</button>
             </div>
         </div>
+        <!--Cadastrar usuário-->
         <div class="botao2">
             <div class="d-grid gap-4">
                  <button onclick="(function(){ window.open('cadastrese.php', '_self');})()" style="border-radius: 30px; background-color: #124A86" class="btn btn-primary" type="submit">Cadastrar Usuário</button>
             </div>
         </div>
         </nav>
+        <!--Lista-->
     <div class="container">
         <div class="table-responsive">
             <table class="table">
@@ -101,32 +108,36 @@ $result = $conn->query($sql);
                   </tr>
                     <tbody>
             <?php
-            while($chamado_data = $result->fetch_assoc()) //enquanto chamada_data receber o result e retornar matriz associativa
+            while($chamado_data = $result->fetch_assoc()) // Executa o while se der certo execução do comando
             {
                 //var_dump($chamado_data);
                 extract($chamado_data); //extrair o chamado_data
                 echo "<tr>";
-            
+              
+                // Seleciona todos de usuario onde o id é igual da tabela, mostra o nome e recebe o id
                 $resultado_user = "SELECT * FROM usuario WHERE id_usuario = '$id_usuario' ";
                 $re_user = mysqli_query($conn, $resultado_user);
                 while ($row_user = mysqli_fetch_assoc($re_user)) { ?>
                 <td> <?php echo $row_user['nome']; ?> </td> <?php
                 }
             
-                echo "<td>" . $descricao . "</td>";
+                echo "<td>" . $descricao . "</td>"; 
 
                 echo "<td>" . $data_abertura . "</td>";
-            
+                
+                // Botão de visualizar ativo
                 echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
 
+                // Deletar chamado
                  echo "<td>
             
             <a href='../../Model/deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?' style='text-decoration:none;' >
             <i class='fa-solid fa-trash'></i>
             </a>
             ";
-            
+            // Concluir chamado
             echo "|";
+            
                  echo "
             <a href='../../Model/concluido.php?status=$id_chamado' ok-confirm='Tem certeza de que deseja Concluir este item?'>
             <i class='fa-solid fa-bookmark'></i>
@@ -154,18 +165,19 @@ $result = $conn->query($sql);
         <script src="../JS/visAtivo.js"></script>
         <script src="../JS//concluir.js"></script>
 </body>
+
 <script>
 var search = document.getElementById('pesquisar') 
 
     search.addEventListener("Keydown", function(event) { //pega a variavel e analisa a tecla que você clicou
         if (event.key === "Enter") // se for Enter ele chama a função
         {
-            searchData();
+            searchData(); // Executa a função
         }
     });
 
-
-    function searchData() {
+    // Adiciona no link o valor atribuido
+    function searchData() { 
         window.location = 'Lista.php?search=' + search.value;
     }
 
