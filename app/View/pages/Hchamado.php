@@ -89,7 +89,7 @@ $result2 =  $conn->query($fechado);
                         echo "<td><button type='button' class='btn btn-outline-primary' onclick='visAtivo($id_chamado)' id='$id_chamado'>Visualizar</button></td>";
                         // Link deletar
                         echo "<td>
-                        <a href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
+                        <a id='lixeira' href='../../Model/Deletar.php?id=$id_chamado' title='Deletar' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>
                         <i class='fa-solid fa-trash'></i>
                         </a>
                         </td>";

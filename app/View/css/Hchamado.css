@@ -65,6 +65,7 @@ table{
 #tabela1{
     margin-top: 0px;
     width: 180%;
+    position: relative;    
 }
 
 #tabela2{
