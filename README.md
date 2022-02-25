@@ -2,7 +2,7 @@
 Repositório do projeto de conclusão do curso técnico de Informática para Internet.
 
 <img src="app/View/images/0.png">
--------------------------------------------------------------------------------------
+
 
 # Resumo do projeto
 
@@ -15,5 +15,5 @@ administrador de visualização da lista de pedidos, a possibilidade de mudar o 
 em que se encontra o pedido, além da possibilidade de controlar e cadastrar
 usuários ativos.</p>
 
--------------------------------------------------------------------------------------
+
 
